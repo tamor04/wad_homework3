@@ -1,6 +1,9 @@
-import { createApp } from 'vue'
-import Index from './Index.vue'
-import Login from './Login.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router.js"; // Import the router
+import store from './store.js';
 
-
-createApp(App).mount('#app')
+createApp(App)
+.use(router)  // Register the router
+.use(store)
+.mount('#app');

@@ -5,9 +5,9 @@
         "author": "Anna Bananason",
         "content": "Try this refreshing banana smoothie to start your day!",
         "create_date": "2023-06-15",
-        "profile_pic": "img\\bananaman1.jpg",
-        "post_pic": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chocolatemoosey.com%2Fbanana-mango-yogurt-smoothie%2F&psig=AOvVaw0ac3fGx680keqGrta1HMTN&ust=1730744861132000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJik7pjlwIkDFQAAAAAdAAAAABAJ", 
-        "like_btn": true
+        "profile_pic": "img/bananaman1.jpg",
+        "post_pic": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chocolatemoosey.com%2Fbanana-mango-yogurt-smoothie%2F&psig=AOvVaw0ac3fGx680keqGrta1HMTN&ust=1730744861132000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJik7pjlwIkDFQAAAAAdAAAAABAJ",
+        "likes": 0
     },
     {
         "id": 2,
@@ -15,19 +15,19 @@
         "author": "Banana Joe",
         "content": "Did you know bananas are berries? Weird huh?",
         "create_date": "2023-10-12",
-        "profile_pic": "img\\boiii-banana-man-lol.gif",
-        "post_pic": "", 
-        "like_btn": true
+        "profile_pic": "img/boiii-banana-man-lol.gif",
+        "post_pic": "",
+        "likes": 0
     },
     {
         "id": 3,
         "title": "Growing Bananas at Home",
         "author": "Anna Bananason",
-        "content": "Am i the only one?!",
+        "content": "Am I the only one?!",
         "create_date": "2024-02-19",
-        "profile_pic": "img\\bananaman1.jpg",
-        "post_pic": "", 
-        "like_btn": false
+        "profile_pic": "img/bananaman1.jpg",
+        "post_pic": "",
+        "likes": 0
     },
     {
         "id": 4,
@@ -35,9 +35,9 @@
         "author": "Banana Joe",
         "content": "Tips for making the perfect moist and flavorful banana bread.",
         "create_date": "2023-12-01",
-        "profile_pic": "img\\boiii-banana-man-lol.gif",
-        "post_pic": "https://banananomicon.com/images/logo.png", 
-        "like_btn": true
+        "profile_pic": "img/boiii-banana-man-lol.gif",
+        "post_pic": "https://banananomicon.com/images/logo.png",
+        "likes": 0
     },
     {
         "id": 5,
@@ -45,9 +45,9 @@
         "author": "Bananimus Maximus",
         "content": "Exploring the use of bananas in famous artworks through history.",
         "create_date": "2024-04-22",
-        "profile_pic": "img\\banana_profile.png",
-        "post_pic": "", 
-        "like_btn": false
+        "profile_pic": "img/banana_profile.png",
+        "post_pic": "",
+        "likes": 0
     },
     {
         "id": 6,
@@ -55,9 +55,9 @@
         "author": "Anna Bananason",
         "content": "*Ring* *Ring* *Ring* Banana Phone!",
         "create_date": "2024-05-17",
-        "profile_pic": "img\\bananaman1.jpg",
-        "post_pic": "", 
-        "like_btn": true
+        "profile_pic": "img/bananaman1.jpg",
+        "post_pic": "",
+        "likes": 0
     },
     {
         "id": 7,
@@ -65,9 +65,9 @@
         "author": "Banana Joe",
         "content": "Dreaming of a tropical escape? Here’s a travel guide to Banana Island!",
         "create_date": "2023-11-25",
-        "profile_pic": "img\\boiii-banana-man-lol.gif",
-        "post_pic": "https://media.cnn.com/api/v1/images/stellar/prod/190128132128-banana-island-tease.jpg?q=w_1600,h_900,x_0,y_0,c_fill", 
-        "like_btn": false
+        "profile_pic": "img/boiii-banana-man-lol.gif",
+        "post_pic": "https://media.cnn.com/api/v1/images/stellar/prod/190128132128-banana-island-tease.jpg?q=w_1600,h_900,x_0,y_0,c_fill",
+        "likes": 0
     },
     {
         "id": 8,
@@ -75,9 +75,9 @@
         "author": "Bananimus Maximus",
         "content": "Ever wondered how bananas make it from the farm to your table?",
         "create_date": "2024-07-10",
-        "profile_pic": "img\\banana_profile.png",
-        "post_pic": "", 
-        "like_btn": true
+        "profile_pic": "img/banana_profile.png",
+        "post_pic": "",
+        "likes": 0
     },
     {
         "id": 9,
@@ -85,9 +85,9 @@
         "author": "Anna Bananason",
         "content": "Bananas have been a pop culture staple for years!",
         "create_date": "2023-09-05",
-        "profile_pic": "img\\bananaman1.jpg",
-        "post_pic": "", 
-        "like_btn": false
+        "profile_pic": "img/bananaman1.jpg",
+        "post_pic": "",
+        "likes": 0
     },
     {
         "id": 10,
@@ -95,8 +95,8 @@
         "author": "Banana Joe",
         "content": "Discover how bananas can enhance your skincare routine naturally.",
         "create_date": "2024-03-03",
-        "profile_pic": "img\\boiii-banana-man-lol.gif",
-        "post_pic": "https://i.pinimg.com/originals/b4/eb/b0/b4ebb07919a6849a50bbae2bb0690c67.jpg", 
-        "like_btn": true
+        "profile_pic": "img/boiii-banana-man-lol.gif",
+        "post_pic": "https://i.pinimg.com/originals/b4/eb/b0/b4ebb07919a6849a50bbae2bb0690c67.jpg",
+        "likes": 0
     }
 ]

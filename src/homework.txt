@@ -1,53 +1,83 @@
-DONE    1. Your App should have two different 'pages', one of them should be the main 'page' that
-        contains at least 10 posts, and the other 'page' should be the signup 'page'. (0 points but
-        it is mandatory for completing the other tasks).
 
-DONE    1.1. the main page should have the structure shown in Figure 1.
-        Figure 1 The main page structure
+Detailed information about the App:
+The Front-end (Vue.js) App should offer the following “pages”
 
+        a. The home page (details will follow about its content) should be protected, i.e., only
+        authenticated users can reach/access it.
 
-DONE            2. The header should be a component that appears on both 'pages' of your App, and it
-                should include navigation links/routes to both pages (2 points).
+        b. A contact us “page” (not protected) that contains just basic contact us information.
+        Note: you can simply change the “About page” (created by Vue.js) to the “Contacts
+        page”.
 
+        c. A signup “page” that allows a user to register by providing her email and password. The
+        signup “page” should look close enough to Figure 1a (2 points).
 
-DONE            3. The footer should also be a component that appears on both 'pages' of your app, and it
-                should include some basic information that traditional footers include (e.g., copyright, etc.)
-                (1 point).
+        d. A login “page” that allows a registered user to login by providing her email and
+        password. The login “page” should contain a button that, when pressed, should
+        redirect the user to the signup “page”. The login “page” should look close enough to
+        Figure 1b (2 points).
 
-
-DONE            4. Concerning the main page:
-        DONE            4.1. A post should have the same structure as the previous homework, but it has to be a
-                        component that relies on the Vuex global store to acquire/fetch its content information
-                        (3 points).
-
-        DONE            4.2. A post should have a 'like' button that is accompanied by the number of likes, which
-                        increases when we press the button (2 points).
-
-        DONE            4.3. On the main ''page', you need to add a button that resets the number of likes in all posts
-                        to zero (2 points).
+Note: The points for (c and d) are assigned based on the provided functionalities. For example,
+you get two points for “c” if your signup “page” sends the credentials (email and password) of
+the user to the server, and the server checks if such a user exists. If not, it will insert the
+credentials in the database. Then, create a JWT and return it to the client.
 
 
 
 
-DONE        1.2. The signup page should have the structure shown in Figure 2.
-            Figure 2 The signup page structure
 
-DONE        5. The signup 'page' should include a form that contains the elements shown in Figure 2 (1
-            point).
+The home “page” should:
+
+        a. Automatically fetches and presents all posts from the database (1 point);
+
+        b. Each listed post should be clickable and when clicked, it should redirect you to “a post”
+        page (details about the content of this page will follow) - (0.5 points).
+
+        c. includes a “logout” button that, when clicked, will logout the user and redirect her to
+        the login page (1 point).
+
+        d. includes an “add post” button that, when clicked, will redirect the user to the add post
+        “page” (details about the content of this page will follow) (0.5 points).
+
+        e. includes a “delete all” button, that when clicked will delete all the posts from the
+        database (2 points).
+
+        The home page should look close enough to Figure 2
 
 
-6. The signup 'page' should provide a password validation that checks for the following
-conditions:
-* The password should be of a specific length (at least 8 chars and less than 15 chars).
-* Includes at least one uppercase alphabet character.
-* Includes at least two lowercase alphabet characters.
-* Includes at least one numeric value.
-* It should start with an uppercase alphabet.
-* It should include the character '_'
-When the password does not satisfy one or more of the previous conditions, a text should
-appear within the form stating that the password is not valid, followed by the condition(s)
-that has not been satisfied. For example, 'the password is not valid - Includes at least one
-numeric value'. (3 points)
 
 
-DONE    7. The styling of your overall App (1 point).
+
+The add post “page” should allow only a logged-in user to add a post, and it should look close
+enough to Figure 3 (2 points).
+
+Note: you are adding only the body of the post through the add post “page”, but a post has a
+date too (check Figure 2).
+
+The a post “page” should fetch and present a specific post (the one clicked on in the
+homepage) from the database (1 point), and it should contain two buttons:
+
+        a. update, when pressed on, will update the post in the database (1 point); and
+
+        b. deletes, when pressed on, will delete the post from the database (1 point).
+
+        The a post “page” should look close enough to Figure 4.
+
+Note: if a user is not logged in, she should not be allowed to reach/access “a post” or “add
+post” “pages” (1 point).
+
+
+
+
+Important notes:
+
+Back-end:
+        Your back-end will be working as an end-point (we will be dealing only with JSON data format,
+        no static files (e.g., images)). Your back-end should be able to handle all required CRUD
+        operation requests coming from the front-end.
+
+Security:
+        You can only use JWT-related techniques for the authentication in your App.
+
+Database:
+        Any table required for your App should be created automatically when you run your back-end App just like we did in week 12 and week 13.

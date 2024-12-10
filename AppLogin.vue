@@ -8,17 +8,18 @@
           <div class="post-body">
 
             <p1>Welcome to BananaIt!</p1>
-            <p2>Create an account</p2>
+            <p2>Login</p2>
 
             <form id="form" @submit.prevent="validateForm" action="/">
               <input type="email" v-model="email" placeholder="****@email.com" required />
               <input type="password" v-model="password" placeholder="Password" required />
-              <button id="login_btn">Sign Up</button>
+              <button id="login_btn">Login</button>
             </form>
+            <button href="/signup" id="signup_btn">Sign Up</button>
 
             <!-- Validation errors -->
             <div v-if="validationErrors.length" class="error-messages">
-              <p3>Password is not valid:</p3>
+              <p3>Password or Email is not valid!</p3>
               <ul>
                 <li v-for="(error, index) in validationErrors" :key="index">
                   {{ error }}
@@ -58,38 +59,68 @@ export default {
   },
   methods: {
     validateForm() {
-      this.validationErrors = []; // Clear previous errors
-
-      // Password validation rules
-      if (this.password.length < 8 || this.password.length >= 15) {
-        this.validationErrors.push("Password must be between 8 and 15 characters.");
-      }
-      if (!/[A-Z]/.test(this.password)) {
-        this.validationErrors.push("Password must include at least one uppercase letter.");
-      }
-      if (!/(.*[a-z]){2}/.test(this.password)) {
-        this.validationErrors.push("Password must include at least two lowercase letters.");
-      }
-      if (!/[0-9]/.test(this.password)) {
-        this.validationErrors.push("Password must include at least one numeric value.");
-      }
-      if (!/^([A-Z])/.test(this.password)) {
-        this.validationErrors.push("Password must start with an uppercase letter.");
-      }
-      if (!/\_/.test(this.password)) {
-        this.validationErrors.push("Password must include the character '_'.");
-      }
-
-      // If there are no errors
-      if (this.validationErrors.length === 0) {
-        alert("Sign-up successful!");
-        // Additional logic (e.g., sending data to the server) can be added here.
+      if (this.email && this.password) {
+        
+        // Add validation logic if needed
+        // Redirect to another page
+        
+        window.location.href = "/"; 
+      } else {
+        alert("Please fill in all fields.");
       }
     },
   },
 };
 </script>
+<!-- not work like this, but should
+<script>
+import VoronoiBackground from "@/components/VoronoiBackground.vue";
+import Header from "@/components/AppHeader.vue";
+import Footer from "@/components/AppFooter.vue";
+import apiClient from "services/api.js"; // Ensure correct path
 
+export default {
+  components: {
+    VoronoiBackground,
+    Header,
+    Footer,
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+      errorMessage: "", // For displaying login errors
+    };
+  },
+  methods: {
+    async loginUser() {
+      try {
+        // Send login request to backend
+        const response = await apiClient.post("/auth/login", {
+          email: this.email,
+          password: this.password,
+        });
+
+        // Store the JWT token in localStorage
+        localStorage.setItem("token", response.data.token);
+
+        // Redirect to home page after successful login
+        this.$router.push("/home");
+      } catch (error) {
+        // Display error message if login fails
+        this.errorMessage = error.response?.data?.error || "Login failed. Please try again.";
+      }
+    },
+
+    goToSignup() {
+      // Redirect to signup page
+      this.$router.push("/signup");
+    },
+  },
+};
+</script>
+
+-->
 <style src="@/assets/login_style.css">
 /* Add page-specific styles */
 </style>

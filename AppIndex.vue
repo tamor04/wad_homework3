@@ -21,8 +21,8 @@ import VoronoiBackground from "@/components/VoronoiBackground.vue";
 import Header from "@/components/AppHeader.vue";
 import Footer from "@/components/AppFooter.vue";
 import Posts from "@/components/AppPosts.vue";
-import Login from "/AppLogin.vue"
-import Home from "/AppIndex.vue"
+//import Login from "/AppLogin.vue"
+//import Home from "/AppIndex.vue"
 
 export default {
   components: {
@@ -30,8 +30,8 @@ export default {
     Header,
     Footer,
     Posts,
-    Login,
-    Home,
+    //Login,
+    //Home
   },
   mounted() {
     const store = useStore();  // Access Vuex store

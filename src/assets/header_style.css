@@ -37,3 +37,16 @@
 .new_post_btn:hover {
     text-decoration: underline; /* Optional hover effect */
 }
+
+.cnt_btn {
+    display: block; /* Muudab elemendid plokkelementideks, nii et igaüks on uuel real */
+    margin-bottom: 10px; /* Lisab vahe iga lingi alla */
+    text-decoration: none; /* Eemaldab lingi allajoone */
+    color: #000; /* Muudab teksti mustaks */
+    padding: 8px 12px; /* Lisab sisu ümber padjapaksuse */
+    background-color: #f0f0f0; /* Lisab taustavärvi */
+    border: 1px solid #ccc; /* Lisab halli piiri */
+    border-radius: 4px; /* Muudab nurgad ümaraks */
+    text-align: center; /* Keskendab teksti */
+    width: 200px; /* Määrab fikseeritud laiuse */
+}

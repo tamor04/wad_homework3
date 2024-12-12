@@ -4,7 +4,7 @@
     <nav>
       <a href="#">Privacy Policy</a> | 
       <a href="#">Terms of Service</a> | 
-      <a href="#">Contact Us</a>
+      <a href="/contact">Contact Us</a>
     </nav>
     <p>Follow us on: 
       <a href="#" target="_blank">Facebook</a> | 

@@ -13,6 +13,7 @@ router.post('/signup', async (req, res) => {
     await pool.query('INSERT INTO users (email, password) VALUES ($1, $2)', [email, hashedPassword]);
     res.status(201).json({ message: 'User created successfully' });
   } catch (err) {
+
     res.status(500).json({ error: err.message });
   }
 });
@@ -31,6 +32,7 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
     res.json({ token });
   } catch (err) {
+
     res.status(500).json({ error: err.message });
   }
 });

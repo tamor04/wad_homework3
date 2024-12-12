@@ -5,9 +5,9 @@ The Front-end (Vue.js) App should offer the following “pages”
         a. The home page (details will follow about its content) should be protected, i.e., only
         authenticated users can reach/access it.
 
-        b. A contact us “page” (not protected) that contains just basic contact us information.
-        Note: you can simply change the “About page” (created by Vue.js) to the “Contacts
-        page”.
+        DONE            b. A contact us “page” (not protected) that contains just basic contact us information.
+                        Note: you can simply change the “About page” (created by Vue.js) to the “Contacts
+                        page”.
 
         c. A signup “page” that allows a user to register by providing her email and password. The
         signup “page” should look close enough to Figure 1a (2 points).

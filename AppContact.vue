@@ -6,28 +6,18 @@
       <main class="main-content">
         <div class="post">
           <div class="post-body">
-            <h1>Welcome to BananaIt!</h1>
-            <h2>Login</h2>
-  
-            <!-- Login Form -->
-            <form id="form" @submit.prevent="loginUser">
-              <input type="email" v-model="email" placeholder="****@email.com" required />
-              <input type="password" v-model="password" placeholder="Password" required />
-              <button id="login_btn">Login</button>
-            </form>
-  
-            <!-- Go to Signup -->
-            <button @click="goToSignup" id="signup_btn">Sign Up</button>
-  
-            <!-- Validation errors -->
-            <div v-if="validationErrors.length" class="error-messages">
-              <p>Password or Email is not valid!</p>
-              <ul>
-                <li v-for="(error, index) in validationErrors" :key="index">
-                  {{ error }}
-                </li>
-              </ul>
-            </div>
+            <h1>Have a Question?</h1>
+            <h2>Contact Us!</h2>
+
+            <div class="buttons">
+              <a href="#" class="cnt_btn">Customer Support</a>
+              <a href="#" class="cnt_btn">Facebook</a>
+              <a href="#" class="cnt_btn">E-Mail</a>
+              <a href="#" class="cnt_btn">Twitter</a>
+              <a href="#" class="cnt_btn">Instagram</a>
+            </div>    
+            
+
           </div>
         </div>
       </main>

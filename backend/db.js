@@ -1,11 +1,11 @@
 const Pool = require('pg').Pool;
 
-const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+const pool = new Pool({ //kui vaja siis mingid andmed siin ära
+  user: "postgres", //process.env.DB_USER,
+  host: "localhost", //process.env.DB_HOST,
+  database: "wad4", //process.env.DB_NAME,
+  password: "5432", //process.env.DB_PASSWORD,
+  port: "5433", //process.env.DB_PORT,
 });
 
 const execute = async(query1, query2) => {

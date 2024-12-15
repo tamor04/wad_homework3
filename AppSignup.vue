@@ -6,6 +6,8 @@
       <main class="main-content">
         <div class="post">
           <div class="post-body">
+
+
             <h1>Welcome to BananaIt!</h1>
             <h2>Create an account</h2>
   
@@ -17,13 +19,15 @@
   
             <!-- Validation errors -->
             <div v-if="validationErrors.length" class="error-messages">
-              <p3>Password is not valid:</p3>
+              <p3>Not able to sign in:</p3>
               <ul>
                 <li v-for="(error, index) in validationErrors" :key="index">
                   {{ error }}
                 </li>
               </ul>
             </div>
+
+
           </div>
         </div>
       </main>
@@ -36,7 +40,7 @@
 import VoronoiBackground from "@/components/VoronoiBackground.vue";
 import Header from "@/components/AppHeader.vue";
 import Footer from "@/components/AppFooter.vue";
-import apiClient from "/services/api.js";
+//import apiClient from "/services/api.js";
 
 export default {
   components: {
@@ -53,12 +57,12 @@ export default {
   },
   methods: {
     validatePassword() {
-      this.validationErrors = []; // Clear previous errors
+      this.validationErrors = []; //clear previous errors
 
-      // Ensure password is treated as a string
+      //Makes sure password is treated as a string
       const password = String(this.password || "").trim();
 
-      // Password validation rules
+      //password validation rules
       if (password.length < 8 || password.length > 15) {
         this.validationErrors.push("Password must be between 8 and 15 characters.");
       }
@@ -80,7 +84,7 @@ export default {
     },
 
 
-    async registerUser() {
+    /*async registerUser() {
       // Ensure email and password are explicitly treated as strings
       this.email = String(this.email || "").trim();
       this.password = String(this.password || "").trim();
@@ -106,15 +110,56 @@ export default {
         // Handle errors (e.g., duplicate email)
         this.validationErrors = [error.response?.data?.error || "Signup failed. Please try again."];
       }
-    }
+    },*/
 
+    async registerUser() {
+      this.validationErrors = [];
+      const data = {
+        email: this.email.trim(),
+        password: this.password.trim(),
+      };
+
+      this.validatePassword(); //validate the password first
+
+      if (this.validationErrors.length > 0) {
+        return; // If there are validation errors, stop here
+      }
+      // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
+      try {
+        const response = await fetch("http://localhost:3000/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+          body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || "Signup failed. Please try again.");
+        }
+
+        const responseData = await response.json();
+        console.log(responseData);
+         
+    
+        alert("Signup successful! You can now log in.");
+        this.$router.push("/login");
+      }
+      catch (error) {  //handles errors (duplicate emails for exampl)
+        this.validationErrors = [error.message || "Signup failed. Please try again."];
+      }
+    },
   },
+
+  
 };
+
+
+
 </script>
-
-
 <style src="@/assets/login_style.css">
-/* Add page-specific styles */
 </style>
 
   

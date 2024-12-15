@@ -9,15 +9,15 @@
             <h1>Welcome to BananaIt!</h1>
             <h2>Login</h2>
   
-            <!-- Login Form -->
+            <!-- Login form -->
             <form id="form" @submit.prevent="loginUser">
               <input type="email" v-model="email" placeholder="****@email.com" required />
               <input type="password" v-model="password" placeholder="Password" required />
               <button id="login_btn">Login</button>
+              <p11 id="login_btn">OR</p11>
+              <button @click="goToSignup" id="signup_btn">Sign Up</button>
             </form>
-  
-            <!-- Go to Signup -->
-            <button @click="goToSignup" id="signup_btn">Sign Up</button>
+
   
             <!-- Validation errors -->
             <div v-if="validationErrors.length" class="error-messages">
@@ -28,6 +28,8 @@
                 </li>
               </ul>
             </div>
+
+
           </div>
         </div>
       </main>
@@ -36,11 +38,14 @@
   </div>
 </template>
 
-  <script>
+
+
+
+<script>
 import VoronoiBackground from "@/components/VoronoiBackground.vue";
 import Header from "@/components/AppHeader.vue";
 import Footer from "@/components/AppFooter.vue";
-import apiClient from "/services/api.js"; // Ensure correct path
+//import apiClient from "/services/api.js"; 
 
 export default {
   components: {
@@ -48,6 +53,7 @@ export default {
     Header,
     Footer,
   },
+
   data() {
     return {
       email: "",
@@ -56,8 +62,44 @@ export default {
       errorMessage: "", // For displaying login errors
     };
   },
+
   methods: {
     async loginUser() {
+      this.validationErrors = [];
+      var data = {
+        email: this.email,
+        password: this.password
+      };
+
+      try {
+        const response = await fetch("http://localhost:3000/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include", // include cookies if necessary
+          body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || "Login failed. Please try again.");
+        }
+
+        const responseData = await response.json();
+        console.log(responseData);
+
+        this.$router.push("/");
+        //location.assign("/");
+        
+      } catch (error) {
+        //display error message if login fails
+        this.errorMessage = error.response?.data?.error || "Login failed. Please try again.";
+        this.validationErrors = [this.errorMessage]; // Populate validationErrors array
+      }
+
+
+      /*
       try {
         // Send login request to backend
         const response = await apiClient.post("/auth/login", {
@@ -74,20 +116,19 @@ export default {
         // Display error message if login fails
         this.errorMessage = error.response?.data?.error || "Login failed. Please try again.";
         this.validationErrors = [this.errorMessage]; // Populate validationErrors array
-      }
+      }*/
     },
 
     goToSignup() {
-      // Redirect to signup page
-      this.$router.push("/signup");
+      this.$router.push("/signup");  //sends to signup page
     },
   },
 };
+
+
+
 </script>
-
-
 <style src="@/assets/login_style.css">
-/* Add page-specific styles */
 </style>
 
   

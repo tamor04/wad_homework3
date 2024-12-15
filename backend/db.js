@@ -24,8 +24,9 @@ const createTblQuery1 = `
 CREATE TABLE IF NOT EXISTS "posttable" (
  "id" SERIAL PRIMARY KEY,         
  "title" VARCHAR(200) NOT NULL,
- "body" VARCHAR(200) NOT NULL,
-    "urllink" VARCHAR(200)  
+ "body" VARCHAR(500) NOT NULL,
+ "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ "urllink" VARCHAR(200)  
 );`;
 
 const createTblQuery2 = `

@@ -26,11 +26,13 @@
   </div>
 </template>
 
-  <script>
+
+
+<script>
 import VoronoiBackground from "@/components/VoronoiBackground.vue";
 import Header from "@/components/AppHeader.vue";
 import Footer from "@/components/AppFooter.vue";
-import apiClient from "/services/api.js"; // Ensure correct path
+import apiClient from "/services/api.js";
 
 export default {
   components: {
@@ -38,6 +40,8 @@ export default {
     Header,
     Footer,
   },
+
+
   data() {
     return {
       email: "",
@@ -46,6 +50,8 @@ export default {
       errorMessage: "", // For displaying login errors
     };
   },
+
+
   methods: {
     async loginUser() {
       try {
@@ -60,6 +66,8 @@ export default {
 
         // Redirect to home page after successful login
         this.$router.push("/");
+
+
       } catch (error) {
         // Display error message if login fails
         this.errorMessage = error.response?.data?.error || "Login failed. Please try again.";
@@ -68,16 +76,18 @@ export default {
     },
 
     goToSignup() {
-      // Redirect to signup page
-      this.$router.push("/signup");
+      this.$router.push("/signup");  // sends to signup page
     },
   },
+
+  
 };
+
+
+
+
 </script>
-
-
-<style src="@/assets/login_style.css">
-/* Add page-specific styles */
+<style src="@/assets/login_style.css">  
 </style>
 
   

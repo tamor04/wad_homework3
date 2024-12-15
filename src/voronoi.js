@@ -9,7 +9,7 @@ const voronoi = d3.voronoi().extent([[0, 0], [width, height]]);
 
 // Load banana image
 const bananaImage = new Image();
-bananaImage.src = 'img/banana.png'; // Ensure this path is correct
+bananaImage.src = 'img/banana.png'; 
 
 // Generate a random banana-themed color
 function getRandomColor() {
@@ -44,11 +44,11 @@ function getRandomColor() {
 
 // Function to draw the banana image with rotation and maintaining aspect ratio
 function drawRotatedImage(image, x, y, width, height, angle) {
-    context.save(); // Save the current canvas state
-    context.translate(x, y); // Move to the center of the banana position
-    context.rotate(angle); // Rotate to match the angle of the Voronoi cell
-    context.drawImage(image, -width / 2, -height / 2, width, height); // Draw the image, centered
-    context.restore(); // Restore the canvas state
+    context.save(); //save the current canvas state
+    context.translate(x, y); //move to the center of the banana position
+    context.rotate(angle); //rotate to match the angle of the Voronoi cell
+    context.drawImage(image, -width / 2, -height / 2, width, height); //draw the image, centered
+    context.restore(); //restore the canvas state
 }
 
 // Configuration with stored colors
@@ -61,8 +61,8 @@ const points = Array.from({ length: numPoints }, () => ({
     rotationDirection: Math.random() < 0.5 ? 1 : -1 // Randomize rotation direction (1 = clockwise, -1 = counterclockwise)
 }));
 
-// Track the currently dragged point
-let draggedPoint = null;
+
+let draggedPoint = null;  // Tracks the currently dragged point
 
 // Animate points with smooth directional movement
 function animateVoronoi() {

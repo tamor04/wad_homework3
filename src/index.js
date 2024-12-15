@@ -23,17 +23,17 @@ const routes = [
   {
     path: '/contact',
     name: 'Contact',
-    component: AppSignup, //muuta AppContact'iks kui see tehtud saab
+    component: AppSignup, 
   },
   {
     path: '/addpost',
     name: 'AddPost',
-    component: AppSignup, //muuta AppAddPost'iks kui see tehtud saab
+    component: AppSignup, 
   },
   {
     path: '/post',
     name: 'Post',
-    component: AppSignup, //muuta AppPost'iks kui see tehtud saab
+    component: AppSignup, 
   },
 ];
 

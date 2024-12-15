@@ -35,8 +35,8 @@ s<template>
 
 <script>
 import VoronoiBackground from "@/components/VoronoiBackground.vue";
-import Index from "/AppIndex.vue"; // Ensure correct path
-import Login from "/AppLogin.vue"; // Ensure correct path
+import Index from "/AppIndex.vue";
+import Login from "/AppLogin.vue"; 
 import Header from "@/components/AppHeader.vue";
 import Footer from "@/components/AppFooter.vue";
 
@@ -58,9 +58,9 @@ export default {
   },
   methods: {
     validateForm() {
-      this.validationErrors = []; // Clear previous errors
+      this.validationErrors = []; //clear previous errors
 
-      // Password validation rules
+      //password validation rules
       if (this.password.length < 8 || this.password.length >= 15) {
         this.validationErrors.push("Password must be between 8 and 15 characters.");
       }
@@ -80,18 +80,20 @@ export default {
         this.validationErrors.push("Password must include the character '_'.");
       }
 
-      // If there are no errors
+      //if there are no errors
       if (this.validationErrors.length === 0) {
         alert("Sign-up successful!");
-        // Additional logic (e.g., sending data to the server) can be added here.
+        
       }
     },
   },
 };
-</script>
 
+
+
+
+</script>
 <style src="@/assets/signup_style.css">
-/* Add page-specific styles */
 </style>
 
   

@@ -3,12 +3,23 @@ import AppIndex from '../AppIndex.vue';
 import AppLogin from '../AppLogin.vue';
 import AppSignup from '../AppSignup.vue';
 import AppContact from '../AppContact.vue';
+import AppAddPost from '../AppAddPost.vue';
+import AppPost from '../AppPost.vue';
+import auth from "@/auth";
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: AppIndex,  
+    component: AppIndex,
+    beforeEnter: async(to, from, next) => {                  //checks if user is logged in or not
+      let authResult = await auth.authenticated();          // if not, sends to the login page
+      if (!authResult) {
+          next('/login')
+      } else {
+          next();
+      }
+    }
 
   },
   {
@@ -29,12 +40,28 @@ const routes = [
   {
     path: '/addpost',
     name: 'AddPost',
-    component: AppSignup, //muuta AppAddPost'iks kui see tehtud saab
+    component: AppAddPost,
+    beforeEnter: async(to, from, next) => {
+      let authResult = await auth.authenticated();
+      if (!authResult) {
+          next('/login')
+      } else {
+          next();
+      }
+    }
   },
   {
-    path: '/post',
+    path: '/post/:id',          
     name: 'Post',
-    component: AppSignup, //muuta AppPost'iks kui see tehtud saab
+    component: AppPost,
+    beforeEnter: async(to, from, next) => {
+      let authResult = await auth.authenticated();
+      if (!authResult) {
+          next('/login')
+      } else {
+          next();
+      }
+    }
   },
   
 ];

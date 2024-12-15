@@ -11,15 +11,15 @@
       <a href="#" target="_blank">Twitter</a> | 
       <a href="#" target="_blank">Instagram</a>
     </p>
-</footer>
+  </footer>
 
 </template>
 
+
 <script>
 export default {};
+
 </script>
-<!--Include footer-specific styles here -->
 <style src="../assets/footer_style.css">
-/* Footer-specific styles */
 </style>
 
